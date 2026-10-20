@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>eNVision - Order</title>
+    <link rel="icon" href="source/icon_envision.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <nav>
+        <div class="logo">
+            <a href="page1home.html">
+                <img src="source/icon_envision.png" alt="eNVision Logo">
+            </a>
+            <p>eNVision</p>
+        </div>
+
+        <div class="nav-links">
+            <a href="page1home.html">Home</a>
+            <a href="page2product.html">Products</a>
+            <a href="page3rewards.html">Rewards</a>
+            <a href="page4aboutus.html">About Us</a>
+            <a href="page5order.html" class="active">Order</a>
+        </div>
+
+        <div class="nav-icon-area">
+            <div class="search-box">
+                <img src="source/icon_search.png" alt="Search Icon">
+                <input type="search" placeholder="Search entire store here...">
+            </div>
+
+            <div class="nav-icon">
+                <div class="icon-box">
+                    <img src="source/icon_heart.png" alt="Wishlist Icon">
+                    <span>Wishlist</span>
+                </div>
+
+                <div class="icon-box">
+                    <img src="source/icon_cust.png" alt="Profile Icon">
+                    <span>Profile</span>
+                </div>
+
+                <div class="icon-box">
+                    <img src="source/icon_shopbag.png" alt="Cart Icon">
+                    <span>Cart</span>
+                </div>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<main>
+    <section class="order-banner">
+        <h1>Premium Eyewear Order</h1>
+        <p>
+            Customize your perfect glasses with modern style and comfort.
+        </p>
+    </section>
+
+    <div class="order-container">
+        <form class="order-form" onsubmit="formValidation(event)">
+            <h1>Order Your Eyewear</h1>
+            <p>Fill in the form below to place your order.</p>
+            <div class="input-group">
+                <label for="name">Full Name</label>
+                <input type="text" name="name" id="name" placeholder="Enter your full name">
+                <p id="nameError"></p>
+            </div>
+
+            <div class="input-group">
+                <label for="email">Email Address</label>
+                <input type="email" name="email" id="email" placeholder="Enter your email address">
+                <p id="emailError"></p>
+            </div>
+
+            <div class="input-group">
+                <label for="tel">Phone Number</label>
+                <input type="tel" name="tel" id="tel" placeholder="Enter your phone number">
+                <p id="telError"></p>
+            </div>
+
+            <div class="input-group">
+                <label for="address">Shipping Address</label>
+                <textarea id="address" placeholder="Enter your shipping address"></textarea>
+                <p id="addressError"></p>
+            </div>
+
+            <div class="input-group">
+                <label for="service">Service Option</label>
+                <select name="service" id="service">
+                    <option value="">Select a service</option>
+                    <option value="prescription">Prescription Glasses</option>
+                    <option value="blue-light">Blue Light Glasses</option>
+                    <option value="sunglasses">Sunglasses</option>
+                </select>
+                <p id="serviceError"></p>
+            </div>
+
+            <div class="input-group">
+                <label for="eye">Eye Type</label>
+                <select name="eye" id="eye">
+                    <option value="">Select eye type</option>
+                    <option value="near">Nearsighted</option>
+                    <option value="far">Farsighted</option>
+                    <option value="astigmatism">Astigmatism</option>
+                </select>
+            </div>
+
+            <div class="input-group">
+                <label for="frame">Frame Style</label>
+                <select name="frame" id="frame">
+                    <option value="">Select frame style</option>
+                    <option value="classic">Classic</option>
+                    <option value="modern">Modern</option>
+                    <option value="round">Round</option>
+                    <option value="square">Square</option>
+                </select>
+            </div>
+
+            <div class="input-group">
+                <label for="color">Frame Color</label>
+                <select name="color" id="color">
+                    <option value="">Select frame color</option>
+                    <option value="black">Black</option>
+                    <option value="silver">Silver</option>
+                    <option value="gold">Gold</option>
+                    <option value="brown">Brown</option>
+                </select>
+            </div>
+
+            <div class="input-group">
+                <label>Payment Method</label>
+                <div class="radio-group">
+                    <label>
+                        <input type="radio" name="payment" value="transfer">Transfer
+                    </label>
+                    <label>
+                        <input type="radio" name="payment" value="cash">Cash
+                    </label>
+                </div>
+                <p id="paymentError"></p>
+            </div>
+
+            <div class="input-group">
+                <label>Add-ons</label>
+                <div class="checkbox-group">
+                    <label>
+                        <input type="checkbox">UV Protection
+                    </label>
+                    <label>
+                        <input type="checkbox">Anti Scratch
+                    </label>
+                    <label>
+                        <input type="checkbox">Premium Case
+                    </label>
+                </div>
+            </div>
+
+            <div class="input-group">
+                <label for="delivery">Delivery Option</label>
+                <select id="delivery">
+                    <option value="">Select delivery option</option>
+                    <option value="standard">Standard Delivery</option>
+                    <option value="express">Express Delivery</option>
+                    <option value="pickup">Store Pickup</option>
+                </select>
+            </div>
+
+            <div class="input-group">
+                <label for="quantity">Quantity</label>
+                <input type="number" name="quantity" id="quantity" placeholder="Enter quantity">
+                <p id="quantityError"></p>
+            </div>
+
+            <div class="input-group">
+                <label for="file">Upload Prescription</label>
+                <input type="file" name="file" id="file">
+            </div>
+
+            <div class="input-group">
+                <label for="notes">Additional Notes</label>
+                <textarea id="notes" placeholder="Enter your prescription details..."></textarea>
+            </div>
+
+            <div class="input-group agreement">
+                <label>
+                    <input type="checkbox" id="agree">I agree to the terms and conditions
+                </label>
+                <p id="agreeError"></p>
+            </div>
+
+            <button type="submit">Place Order</button>
+        </form>
+    </div>
+</main>
+
+<footer>
+    <h3>eNVision</h3>
+    <p>Modern eyewear crafted for style, comfort, and confidence.</p>
+    <p>Copyright &copy; by Marcellino - 2902594885 (Order)</p>
+</footer>
+
+<script src="javas.js"></script>
+
+</body>
+</html>
